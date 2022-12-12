@@ -27,7 +27,7 @@ const storage = multer.diskStorage({
     },
     //Dentro de destination añadimos la dirección donde queremos guardar nuestros archivos.
     destination: (req, file, cb) => {
-        cb(null, path.join(__dirname, '../../public/uploads'));
+        cb(null, '/tmp/');
     }
 });
 
