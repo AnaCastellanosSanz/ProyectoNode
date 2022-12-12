@@ -89,6 +89,10 @@ server.use(passport.initialize());
 server.use(passport.session());
 
 
+//Mensaje para que se muestre cuando alguien entre a mi ruta vacía. 
+server.get('/', (req, res) => {
+    res.json("Bienvenido a mi API de películas")
+});
 
 
 //-- RUTAS --
