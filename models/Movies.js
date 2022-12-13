@@ -1,5 +1,5 @@
 // Info de la base de datos de movies.
-
+const uuid = require('uuid');
 const mongoose = require('mongoose');
 
 // new mongoose.Schema nos permite crear un nuevo esquema que va a seguir una colección.
