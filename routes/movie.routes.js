@@ -44,17 +44,16 @@ moviesRouter.get('/:id', async (req, res, next) => {
 });
 
 
+
 //Ruta que nos permite obtener los datos de una película mediante el título.
-moviesRouter.get('title/:title', async (req, res) => {
-	const {title} = req.params;
-
-	try {
-		const movieTitle = await Movie.find({ title });
-		return res.status(200).json(movieTitle);
-	} catch (err) {
-		return res.status(500).json(err);
-	}
-
+moviesRouter.get('/title/:title', async (request, response, next) => {
+    try{
+        const titleMovie = request.params.title;
+        const movie = await Movie.find({title: titleMovie});
+        return response.status(200).json(movie);
+    } catch (err) {
+        next(err);
+    }
 });
 
 
