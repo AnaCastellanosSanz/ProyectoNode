@@ -8,7 +8,7 @@ const createError = require("../errors/create-error");
 const VALID_FILE_TYPES = ['image/png', 'image/jpg', 'image/jpeg'];
 
 // Filtro de archivos
-// La callback se ejecutará cn true si permitimos que ese achivo lo guarde o con false que llevará a un error y no permititrá que eese archivo pase.
+// La callback se ejecutará con true si permitimos que ese achivo lo guarde o con false que llevará a un error y no permitirá que ese archivo pase.
 const fileFilter = (req, file, cb) => {
     // file.mimetype es el campo dentro del archivo donde vamos a tener guardada la extensión de este.
     if (!VALID_FILE_TYPES.includes(file.mimetype)) {
@@ -19,7 +19,7 @@ const fileFilter = (req, file, cb) => {
     }
 };
 
-// ALmacen archivos.
+// Almacen archivos.
 const storage = multer.diskStorage({
     filename: (req, file, cb) => {
         //Para hacer que cada nombre de archivo sea único tenemos que poner la fecha en ese instante.

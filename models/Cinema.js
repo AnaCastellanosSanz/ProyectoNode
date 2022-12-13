@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 // new mongoose.Schema nos permite crear un nuevo esquema que va a seguir una colección.
 const cinemaSchema = new mongoose.Schema(
   {
-    //En este caso todos los datos correspondientes a la colección son requeridos.
+    //Datos de la colección.
     name: { type: String, required: true },
     location: { type: String, required: true },
     movies: [{ type: mongoose.Types.ObjectId, ref: 'Movie' }],

@@ -44,7 +44,7 @@ moviesRouter.get('/:id', async (req, res, next) => {
 });
 
 
-//Ruta que nos permite que al poner unicamente /tittle aparezaca el mensaje indicado.
+//Ruta que nos permite que al poner unicamente /tittle aparezca el mensaje indicado.
 moviesRouter.get('/title', async (request, response, next) => {
     try{
         return response.status(200).json('Busque una película por su título');
@@ -127,7 +127,7 @@ moviesRouter.post('/with-uri', [isAuthPassport, upload.single('picture')], async
 });
 
 //Post con Cloudinary
-// El orden es importante, primero multer mes sube el archivo a la carpeta public y después uploadToCloudinary me lo sube de la carpeta public, lo sube a Cloudinary y finalmente lo elimina.
+// El orden es importante, primero multer me sube el archivo a la carpeta public y después uploadToCloudinary me lo sube de la carpeta public, lo sube a Cloudinary y finalmente lo elimina.
 moviesRouter.post('/to-cloud', [isAuthPassport, upload.single('picture'), uploadToCloudinary], async (req, res, next) => {
     try {
         const newMovie = new Movie({ ...req.body, picture: req.file_url });

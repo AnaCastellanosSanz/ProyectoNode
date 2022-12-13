@@ -6,7 +6,7 @@ const mongoose = require('mongoose');
 const movieSchema = new mongoose.Schema(
     {
         
-        //En este caso todos los datos correspondientes a la colección son requeridos excepto picture.
+        //Datos de la colección.
         title: { type: String, required: true },
         director: { type: String, required: true },
         year: { type: Number, required: true },

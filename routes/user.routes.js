@@ -57,12 +57,12 @@ userRouter.post('/login', (req, res, next) => {
 
 userRouter.post('/logout', (req, res, next) => {
     if (req.user) {
-        // El logOut deslogue al usurio y destruye el objeto request.user.
+        // El logOut desloguea al usurio y destruye el objeto request.user.
         req.logOut(() => {
             // Destroy nos permite destruir la sesión.
             // La Callback se ejecuta una vez haya sido destruida la sesión.
             req.session.destroy(() => {
-                // ClaarCookie permite limpiar la cookie con el id indicado al llegar a cliente.
+                // ClearCookie permite limpiar la cookie con el id indicado al llegar a cliente.
                 res.clearCookie('connect.sid');
                 return res.status(200).json("Gracias por su visita");
             });

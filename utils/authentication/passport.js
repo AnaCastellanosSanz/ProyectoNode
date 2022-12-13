@@ -14,7 +14,7 @@ const createError = require('../errors/create-error');
 // 1. Como primer parámetro recibe el nombre estrategia.
 // 2. Como segundo parámetro recibe la nueva estrategia la cual se importa desde el passport local.
 // 2.1 Configuración de la estrategia.
-// 2.2 Callback que se ejecuta cada vez que se registra un usuario --> aprovechamos para guardar usuario en la BD.
+// 2.2 Callback que se ejecuta cada vez que se registra un usuario --> aprovechamos para guardar usuario en la base de datos.
 passport.use(
     'register',
     new LocalStrategy(
