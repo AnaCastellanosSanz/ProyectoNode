@@ -45,14 +45,16 @@ moviesRouter.get('/:id', async (req, res, next) => {
 
 
 //Ruta que nos permite que al poner unicamente /tittle aparezca el mensaje indicado.
-moviesRouter.get('/title', async (request, response, next) => {
-    try{
-        return response.status(200).json('Busque una película por su título');
-    } catch (err) {
-        next(err);
-    }
-});
+moviesRouter.get('title/:title', async (req, res) => {
+	const {title} = req.params;
 
+	try {
+		const movieByTitle = await Movie.find({ title });
+		return res.status(200).json(movieByTitle);
+	} catch (err) {
+		return res.status(500).json(err);
+	}
+});
 
 
 //Ruta que nos permite obtener los datos de una película mediante el título.
