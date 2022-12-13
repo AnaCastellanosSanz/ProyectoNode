@@ -1,5 +1,4 @@
 // Info de la base de datos de movies.
-const uuid = require('uuid');
 const mongoose = require('mongoose');
 
 // new mongoose.Schema nos permite crear un nuevo esquema que va a seguir una colección.
@@ -12,7 +11,7 @@ const movieSchema = new mongoose.Schema(
         year: { type: Number, required: true },
         genre: {type: String, required: true },
         picture: String
-        default: uuid.v4 
+      
 
     },
     {
